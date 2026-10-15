@@ -54,6 +54,9 @@ int renderdoccmd(GlobalEnvironment &env, std::vector<std::string> &argv);
 
 void readCapOpts(const std::string &str, CaptureOptions *opts);
 
+// implemented in renderdoccmd_mcp.cpp
+Command *MakeMcpCommand();
+
 // these must be defined in platform .cpps
 void DisplayRendererPreview(IReplayController *renderer, TextureDisplay &displayCfg, uint32_t width,
                             uint32_t height, uint32_t numLoops);

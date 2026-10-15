@@ -1574,6 +1574,7 @@ int renderdoccmd(GlobalEnvironment &env, std::vector<std::string> &argv)
     add_command("convert", new ConvertCommand());
     add_command("embed", new EmbeddedSectionCommand(false));
     add_command("extract", new EmbeddedSectionCommand(true));
+    add_command("mcp", MakeMcpCommand());
 #endif    // !defined(RDOC_SELFCAPTURE_LIMITEDAPI)
 
     if(argv.size() <= 1)
