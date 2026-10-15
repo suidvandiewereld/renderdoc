@@ -3,6 +3,7 @@
   <ItemGroup>
     <ClCompile Include="renderdoccmd.cpp" />
     <ClCompile Include="renderdoccmd_win32.cpp" />
+    <ClCompile Include="renderdoccmd_mcp.cpp" />
     <ClCompile Include="..\renderdoc\3rdparty\miniz\miniz.c">
       <Filter>3rdparty</Filter>
     </ClCompile>
@@ -21,6 +22,7 @@
       <Filter>3rdparty</Filter>
     </ClInclude>
     <ClInclude Include="renderdoccmd.h" />
+    <ClInclude Include="mcp\mcp_json.h" />
     <ClInclude Include="3rdparty\cmdline\cmdline.h">
       <Filter>3rdparty</Filter>
     </ClInclude>

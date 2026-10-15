@@ -1,6 +1,8 @@
 set(sources
     renderdoccmd.cpp
     renderdoccmd.h
+    renderdoccmd_mcp.cpp
+    mcp/mcp_json.h
     3rdparty/cmdline/cmdline.h
     )
 set(includes PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty ${CMAKE_SOURCE_DIR}/renderdoc/api)
@@ -35,6 +37,7 @@ elseif(ANDROID)
     endif()
 
     set_source_files_properties(renderdoccmd.cpp PROPERTIES COMPILE_FLAGS "-fexceptions -frtti")
+    set_source_files_properties(renderdoccmd_mcp.cpp PROPERTIES COMPILE_FLAGS "-fexceptions -frtti")
     set_source_files_properties(renderdoccmd_android.cpp PROPERTIES COMPILE_FLAGS "-fexceptions")
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
@@ -93,6 +96,7 @@ endif()
 
 if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     set_property(SOURCE renderdoccmd.cpp APPEND_STRING PROPERTY COMPILE_FLAGS " -Wno-shadow")
+    set_property(SOURCE renderdoccmd_mcp.cpp APPEND_STRING PROPERTY COMPILE_FLAGS " -Wno-shadow")
 endif()
 
 target_include_directories(renderdoccmd ${includes})
